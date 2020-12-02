@@ -9,14 +9,16 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - name: Use Xcode 11
+      run: |
+        sudo xcode-select -s "/Applications/Xcode_11.7.app"
+
     - name: Export settings from npm package
       run: |
         npm run export_npm_env
 
     - name: Setup V8 build environment
       run: |
-        echo "VERSION ${VERSION}"
-        echo "V8_VERSION ${V8_VERSION}"
         brew install coreutils
         scripts/setup.sh -r ${V8_VERSION} ios
 
