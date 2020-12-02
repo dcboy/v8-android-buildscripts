@@ -105,6 +105,7 @@ index cba0602f8..1e4ae504f 100644
 +    cflags_cc += [
 +      "-Wno-deprecated-copy",
 +      "-Wno-final-dtor-non-final-class",
++      "-Wno-range-loop-analysis",
 +    ]
 +  }
  }
